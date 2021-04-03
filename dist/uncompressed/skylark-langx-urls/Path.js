@@ -15,9 +15,9 @@ define([
                 hasLeading : false,
                 hasTrailing : false
             };
-            if (arguments.length == 1 && langx.isString(arguments[0])) {
+            if (arguments.length == 1 && types.isString(arguments[0])) {
                   this._parse(arguments[0]);
-            } else  if (langx.isArray(arguments[0])){
+            } else  if (types.isArray(arguments[0])){
                 _.segments = arguments[0];
                 _.hasLeading = arguments[1] || false;
                 _.hasTrailing = arguments[2] || false;
