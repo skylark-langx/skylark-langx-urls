@@ -134,6 +134,19 @@ define('skylark-langx-urls/getFileExtension',[
     return urls.getFileExtension = getFileExtension;
 
 });
+   define('skylark-langx-urls/getFileName',[
+    './urls'
+], function (urls) {
+    'use strict';
+
+    function getFileName (url) {
+        var fileName = url.split('/').pop() || "";
+        return fileName;
+    }
+
+    return urls.getFileName = getFileName;
+
+});
 define('skylark-langx-urls/isCrossOrigin',[
     './urls'
 ], function (urls) {
@@ -660,6 +673,7 @@ define('skylark-langx-urls/main',[
 	"./urls",
 	"./getAbsoluteUrl",
 	"./getFileExtension",
+	"./getFileName",
 	"./isCrossOrigin",
 	"./parseUrl",
 	"./Path"

@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./urls","./getAbsoluteUrl","./getFileExtension","./isCrossOrigin","./parseUrl","./Path"],function(e){return e});
+define(["./urls","./getAbsoluteUrl","./getFileExtension","./getFileName","./isCrossOrigin","./parseUrl","./Path"],function(e){return e});
 //# sourceMappingURL=sourcemaps/main.js.map
