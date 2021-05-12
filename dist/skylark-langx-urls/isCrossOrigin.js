@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./urls"],function(o){"use strict";return o.isCrossOrigin=function(o,r=window.location){const t=parseUrl(o);return(":"===t.protocol?r.protocol:t.protocol)+t.host!==r.protocol+r.host}});
+define(["./urls","./parseUrl"],function(o,r){"use strict";return o.isCrossOrigin=function(o,t=window.location){const n=r(o);return(":"===n.protocol?t.protocol:n.protocol)+n.host!==t.protocol+t.host}});
 //# sourceMappingURL=sourcemaps/isCrossOrigin.js.map

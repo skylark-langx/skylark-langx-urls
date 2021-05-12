@@ -1,6 +1,7 @@
 define([
-    './urls'
-], function (urls) {
+    './urls',
+    "./parseUrl"
+], function (urls,parseUrl) {
     'use strict';
 
     const isCrossOrigin = function (url, winLoc = window.location) {

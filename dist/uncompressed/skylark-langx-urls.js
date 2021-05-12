@@ -147,21 +147,6 @@ define('skylark-langx-urls/getFileExtension',[
     return urls.getFileName = getFileName;
 
 });
-define('skylark-langx-urls/isCrossOrigin',[
-    './urls'
-], function (urls) {
-    'use strict';
-
-    const isCrossOrigin = function (url, winLoc = window.location) {
-        const urlInfo = parseUrl(url);
-        const srcProtocol = urlInfo.protocol === ':' ? winLoc.protocol : urlInfo.protocol;
-        const crossOrigin = srcProtocol + urlInfo.host !== winLoc.protocol + winLoc.host;
-        return crossOrigin;
-    };
-
-    return urls.isCrossOrigin = isCrossOrigin;
-
-});
 define('skylark-langx-urls/parseUrl',[
     './urls'
 ], function (urls) {
@@ -207,6 +192,22 @@ define('skylark-langx-urls/parseUrl',[
     };
 
     return urls.parseUrl = parseUrl;
+});
+define('skylark-langx-urls/isCrossOrigin',[
+    './urls',
+    "./parseUrl"
+], function (urls,parseUrl) {
+    'use strict';
+
+    const isCrossOrigin = function (url, winLoc = window.location) {
+        const urlInfo = parseUrl(url);
+        const srcProtocol = urlInfo.protocol === ':' ? winLoc.protocol : urlInfo.protocol;
+        const crossOrigin = srcProtocol + urlInfo.host !== winLoc.protocol + winLoc.host;
+        return crossOrigin;
+    };
+
+    return urls.isCrossOrigin = isCrossOrigin;
+
 });
 define('skylark-langx-urls/Path',[
     "skylark-langx-types",
