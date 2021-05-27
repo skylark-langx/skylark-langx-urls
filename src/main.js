@@ -3,6 +3,7 @@ define([
 	"./getAbsoluteUrl",
 	"./getFileExtension",
 	"./getFileName",
+	"./getQuery",
 	"./isCrossOrigin",
 	"./parseUrl",
 	"./Path"
