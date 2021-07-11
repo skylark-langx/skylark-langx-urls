@@ -25,10 +25,10 @@
   "bugs": "https://github.com/skylarklangx/skylark-langx/issues",
   "dependencies": {
     "skylark-langx-constructs": "git+https://github.com/skylark-langx/skylark-langx-constructs.git",
-    "skylark-langx-ns": "git+https://github.com/skylark-langx/skylark-langx-ns.git#master",
-    "skylark-langx-objects": "git+https://github.com/skylark-langx/skylark-langx-objects.git#master",
+    "skylark-langx-ns": "git+https://github.com/skylark-langx/skylark-langx-ns.git",
+    "skylark-langx-objects": "git+https://github.com/skylark-langx/skylark-langx-objects.git",
     "skylark-langx-strings": "git+https://github.com/skylark-langx/skylark-langx-strings.git",
-    "skylark-langx-types": "git+https://github.com/skylark-langx/skylark-langx-types.git#master"
+    "skylark-langx-types": "git+https://github.com/skylark-langx/skylark-langx-types.git"
   },
   "engines": {
     "node": ">=0.8.0"
