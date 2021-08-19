@@ -5,5 +5,5 @@
  * @link www.skylarkjs.org
  * @license MIT
  */
-define(["./urls"],function(e){"use strict";return e.getFileName=function(e){return e.split("/").pop()||""}});
+define(["./urls"],function(n){"use strict";return n.getFileName=function(n){const e=n.indexOf("#"),t=n.indexOf("?"),i=Math.min(e>0?e:n.length,t>0?t:n.length);return n.substring(n.lastIndexOf("/",i)+1,i)}});
 //# sourceMappingURL=sourcemaps/getFileName.js.map
