@@ -1,5 +1,6 @@
 define([
 	"./urls",
+	"./create_object_url",
 	"./get-absolute-url",
 	"./get-file-extension",
 	"./get-file-name",
