@@ -128,6 +128,45 @@ define('skylark-langx-urls/create_object_url',[
 });
 
 
+define('skylark-langx-urls/create_valid_absolute_url',[
+    './urls'
+], function (urls) {
+    'use strict';
+
+    function _isValidProtocol(url) {
+        if (!url) {
+            return false;
+        }
+        switch (url.protocol) {
+        case 'http:':
+        case 'https:':
+        case 'ftp:':
+        case 'mailto:':
+        case 'tel:':
+            return true;
+        default:
+            return false;
+        }
+    }
+    function createValidAbsoluteUrl(url, baseUrl) {
+        if (!url) {
+            return null;
+        }
+        try {
+            const absoluteUrl = baseUrl ? new URL(url, baseUrl) : new URL(url);
+            if (_isValidProtocol(absoluteUrl)) {
+                return absoluteUrl;
+            }
+        } catch (ex) {
+        }
+        return null;
+    }
+
+    return urls.createValidAbsoluteUrl = createValidAbsoluteUrl;
+
+});
+
+
 define('skylark-langx-urls/get-absolute-url',[
     './urls'
 ], function (urls) {
@@ -278,6 +317,29 @@ define('skylark-langx-urls/is-cross-origin',[
     return urls.isCrossOrigin = isCrossOrigin;
 
 });
+define('skylark-langx-urls/is_same_origin',[
+    './urls'
+], function (urls) {
+    'use strict';
+
+    function isSameOrigin(baseUrl, otherUrl) {
+        let base;
+        try {
+            base = new URL(baseUrl);
+            if (!base.origin || base.origin === 'null') {
+                return false;
+            }
+        } catch (e) {
+            return false;
+        }
+        const other = new URL(otherUrl, base);
+        return base.origin === other.origin;
+    }
+
+    return urls.isSameOrigin = isSameOrigin;
+
+});
+
 define('skylark-langx-urls/path',[
     "skylark-langx-types",
     "skylark-langx-constructs/klass",
@@ -742,11 +804,13 @@ define('skylark-langx-urls/path',[
 define('skylark-langx-urls/main',[
 	"./urls",
 	"./create_object_url",
+	"./create_valid_absolute_url",
 	"./get-absolute-url",
 	"./get-file-extension",
 	"./get-file-name",
 	"./get-query",
 	"./is-cross-origin",
+	"./is_same_origin",
 	"./parse-url",
 	"./path"
 ],function(urls){
