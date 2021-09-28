@@ -1,14 +1,14 @@
 define([
     "skylark-langx-types",
-    "skylark-langx-constructs/klass",
+    "skylark-langx-constructs",
     "./urls"
-], function(types,klass,urls) {
+], function(types,constructs,urls) {
 
     /**
      * @class Path
      * @constructor
      */
-    var Path =   klass({
+    var Path =   constructs.klass({
         _construct : function() {
             var _ = this._ = {
                 segments : null,
