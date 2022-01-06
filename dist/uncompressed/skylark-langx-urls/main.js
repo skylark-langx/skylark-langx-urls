@@ -8,8 +8,7 @@ define([
 	"./get-query",
 	"./is-cross-origin",
 	"./is_same_origin",
-	"./parse-url",
-	"./path"
+	"./parse-url"
 ],function(urls){
 	return urls;
 });
